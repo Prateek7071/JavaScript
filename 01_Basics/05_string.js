@@ -45,8 +45,17 @@ console.log(`Prototype 'indexOf' ${sent.indexOf("jump",21)}`); //reutrn false as
 console.log(`Prototype 'indexOf' ${sent.indexOf("jump",20)}`); //return index of the substring
 console.log(`Prototype 'indexOf' ${sent.indexOf("jump")}`); // starts with 0 as nothing is given
 
+console.log(`Prototype 'lastIndexOf' ${sent.lastIndexOf("jump")}`); //return index of the substring from the last
+console.log(`Prototype 'lastIndexOf' ${sent.lastIndexOf("jump",20)}`); //return index of the substring from the last
 
+console.log(`Prototype 'localeCompare' ${sent.localeCompare("jump")}`); //compare two strings in the current locale
 
+console.log(`Prototype 'match' ${sent.match("quick")}`); //return the matched string
 
+console.log(`Prototype 'repeat' ${sent.repeat(2)}`); //repeat the string n times
+console.log(`Prototype 'repeat' ${sent.repeat(0)}`); //repeat the string n times
+
+console.log(`Prototype 'replace' ${sent.replace("quick","slow")}`); //replace the substring with the given string
+console.log(`Prototype 'replace' ${sent.replace(/quick/g,"slow")}`); //replace the substring with the given string
 
 
