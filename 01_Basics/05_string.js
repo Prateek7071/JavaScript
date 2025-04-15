@@ -57,5 +57,8 @@ console.log(`Prototype 'repeat' ${sent.repeat(0)}`); //repeat the string n times
 
 console.log(`Prototype 'replace' ${sent.replace("quick","slow")}`); //replace the substring with the given string
 console.log(`Prototype 'replace' ${sent.replace(/quick/g,"slow")}`); //replace the substring with the given string
+console.log(`Prototype 'replace' ${sent.replace(/quick/gi,"slow")}`); //replace the substring with the given string
+console.log(`Prototype 'replace' ${sent.replace(/quick/gi,"slow",2)}`); //replace the substring with the given string
+
 
 
