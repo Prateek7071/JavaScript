@@ -71,6 +71,29 @@ console.log(tinderUser.hasOwnProperty("id")); // true
 console.log(tinderUser.hasOwnProperty("id2")); // false 
 
 
+console.log("-------------------------------------------------------");
+//de structuring objects
+const User ={
+    name: "sam",
+    age: 21,
+    email: "someone@mail.com",
+    corporatename: "samual johnson"
+}
+
+//destructure part
+
+const {corporatename: id} = User
+// can also use const {corporatename} = User
+// console.log(corporatename)
+console.log(id);
+// destructing in react component example
+
+const navbar = ({company})   =>{
+
+}
+navbar(company= "Google")
+// can also destructure arrays
+
 
 
 
