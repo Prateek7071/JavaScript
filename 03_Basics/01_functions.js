@@ -1,4 +1,4 @@
-function greetings(username){
+function greetings(username= "sam"){ //default value is sam if nothing passed else the parameter will be replaced with the argument
     if(!username){
         console.log("Please enter a username!")
         return
@@ -39,5 +39,20 @@ function manyElements(val1, val2,...val3){
 
 console.log(manyElements(210,2010,411,770,771));
 
+console.log("-------------------------------------------------------");
 
+function addTwoNumber(num1, num2){
+    console.log(num1+num2);
+    
+}
+const result = addTwoNumber(3,5) // returns undefined as function does not have a return statement
+console.log(result); // undefined
+
+function addThreeNums(num1, num2, num3){
+    return num1 + num2 + num3
+    console.log("this will not run because return statement ends the function execution");
+    
+}
+const result2 = addThreeNums(3,5,7) // returns 15 as function has a return statement
+console.log(result2);
 
