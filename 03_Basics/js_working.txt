@@ -1,0 +1,39 @@
+Javascript Execution Context
+1.when we pass out code files to JS a Global Execution context is made and is refered to 'this' variable.
+if we ran it in a browser, the Global EC is different in browser than node, bun etc.
+generally for browser the value of 'this' is window object
+This is executed in a thread
+JS is a single threaded, everything is a process.
+
+2. Function Execution Context
+3. Eval Execution Context (when you read mongoose documentation)
+
+4. The code runs in two phases:
+    a. Memory creation phase (creation phase) : here memory is allocated to all the variables, or anything that we declared. No execution happens, any funtion, mathamatical fn +- are not executed.
+
+5. code execution example:
+
+{
+    Let val1 = 10
+    let val2 = 5
+    Function addNum(num1, num2){
+        let total = num1 + num2
+        return total
+    }
+    let result1 = addNum( val1 , val2 )
+    let result2 = addNum(10 ,2)
+}
+
+
+a. so any code executes with global execution funtion, and it is allocated to this variable at the start 
+b. In memory phase all var are collected 
+    (1st cycle)
+
+    val1 -> Undefined
+    val2 -> Undefined
+    addNum -> defination i.e., (num1, num2){
+        let total = num1 + num2
+        return total}
+
+    result1 ->Undefined
+    result2 ->Undefined
