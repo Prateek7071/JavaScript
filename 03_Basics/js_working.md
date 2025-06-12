@@ -85,3 +85,6 @@ b. In memory phase all var are collected
 ![Diagram](src/image.png)
 
 call stack:
+![Diagram](src/call_stack.png)
+
+[for Truthy](../04_control_flow/truthy.js) ![see Diagram](src/image%20copy.png)
