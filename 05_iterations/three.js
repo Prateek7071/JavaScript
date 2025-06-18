@@ -34,8 +34,8 @@ for (const [key,val] of map) {
 }
 
 const myObj = {
-    'game1': "Fifa",
-    'game2': "GTA"
+    game1: "Fifa",
+    game2: "GTA"
 }
 
 // for (const [key,val] of myObj) {
