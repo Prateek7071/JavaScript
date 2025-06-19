@@ -27,7 +27,7 @@ for (const key in myArr) {
 }
 for (const key in myArr) {
     console.log(`The value of ${key} is ${myArr[key]}`);
-}
+}   
 
 // const map = new Map()
 // map.set('IN', 'India') 
