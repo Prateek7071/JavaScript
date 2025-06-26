@@ -4,7 +4,7 @@ ex console.log(document.links(2)), and can manipulate a lot of things.
 ---------------------------------------------------------------------------------
 Document Object Model
 
->(../assets/DOM.png)
+>[!Diagram](../assets/DOM.png)
 ---------------------------------------------------------------------------------
 Manipulating html tags
 > using tool to find id
