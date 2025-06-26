@@ -3,6 +3,7 @@
 ex console.log(document.links(2)), and can manipulate a lot of things.
 ---------------------------------------------------------------------------------
 Document Object Model
+
 [!Diagram](../assets/DOM.png)
 ---------------------------------------------------------------------------------
 Manipulating html tags
