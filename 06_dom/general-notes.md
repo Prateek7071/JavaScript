@@ -29,65 +29,65 @@ similarly we can use set
 
  document.getElementById("title").setAttribute("class", "test") # this will always override the previous attribute 
 
-![setAttribute](image.png)
+![setAttribute](../06_dom/assets/image.png)
 
-![class changes from heading to test](image-1.png)
+![class changes from heading to test](../06_dom/assets/image-1.png)
 
 can also do both
 
  document.getElementById("title").setAttribute("class", "test , heading")
 
- ![set both](image-2.png)
+ ![set both](../06_dom/assets/image-2.png)
 
 some oother changes: 
-![alt text](image-3.png)
+![alt text](../06_dom/assets/image-3.png)
 
 difference between innerText and textContent 
-![alt text](image-4.png)
+![alt text](../06_dom/assets/image-4.png)
 
 innerHTML gives all the html if present
-![alt text](image-5.png)
+![alt text](../06_dom/assets/image-5.png)
 
 document.querySelector("h2") # gives the first query
-![alt text](image-6.png)
+![alt text](../06_dom/assets/image-6.png)
 
 can also use css selectors like # and , # used for id and . for class
-![alt text](image-7.png)
+![alt text](../06_dom/assets/image-7.png)
 
 also use input and other css selectors here example
-![alt text](image-8.png)
+![alt text](../06_dom/assets/image-8.png)
 
-![alt text](image-9.png)
+![alt text](../06_dom/assets/image-9.png)
 
-![alt text](image-10.png)   
+![alt text](../06_dom/assets/image-10.png)   
 
-![alt text](image-11.png)
+![alt text](../06_dom/assets/image-11.png)
 
 When using querySelectorAll we dont get pure array as there is no map option 
-example: ![alt text](image-12.png)
+example: ![alt text](../06_dom/assets/image-12.png)
 
 example of pure array 
-![map available](image-13.png)
+![map available](../06_dom/assets/image-13.png)
 
 node list
-![alt text](image-14.png)
+![alt text](../06_dom/assets/image-14.png)
 
 even if there is just one element we need to specify it so as to specify
-![nodelist](image-15.png)
+![nodelist](../06_dom/assets/image-15.png)
 
 using forEach properties
-![alt text](image-16.png)
+![alt text](../06_dom/assets/image-16.png)
 
 in case of htmlCollectiona and node list we need to convert it to array to use looping and stuff as it doesnt provide one 
-![alt text](image-17.png)
+![alt text](../06_dom/assets/image-17.png)
 
 converted to array from html Collection
-![alt text](image-18.png)
+![alt text](../06_dom/assets/image-18.png)
 
-![alt text](image-19.png)
+![alt text](../06_dom/assets/image-19.png)
 
-![alt text](image-20.png)
+![alt text](../06_dom/assets/image-20.png)
 
 changes in js wiki page using querySelectorAll
 
-![alt text](image-22.png)
+![alt text](../06_dom/assets/image-22.png)
