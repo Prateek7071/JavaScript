@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>DOM | JS Part 2</title>
+</head>
+<body style=color:white;>
+    <div class="parent">
+        <!-this is a comment to showcase line break and how its counted -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);
+    
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+    }
+
+    parent.children[1].style.color = 'orange'
+    
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);    
+
+    const oneDay = document.querySelector('.day')
+    console.log(oneDay);
+    // because querySelector is an expensive process we can directly call for 
+    // parent element from child like:
+
+    console.log(oneDay.parentElement);
+    console.log(oneDay.nextElementSibling);
+    
+    console.log("Nodes: ", parent.childNodes); //shows 11 as this is a tree structure in DOM
+    // here line breaks are also considered so line brake after div then comment 
+    // then line break after monday and so on.
+    // *** this child node is the important part here *** 
+        
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | JS part 2</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    // method 1 to add another language
+    function addLang(newLang){
+        const li = document.createElement('li')
+        li.innerHTML = `${newLang}`
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLang("Python")
+    addLang("TypeScript")
+
+    //the problem here is traversal just to add one element need to traverse the whole tree
+    // here its just one but what happens when you have like a 1000 elements, so everytime this method is run need to traverse
+    // when using innerHTML the entire tree is traversed
+
+    //Method 2 to add another language
+    function optimisedAddLang(newLang){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(newLang))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    // avoid InnerHTML and use appendChild whenever and wherever possible
+
+    optimisedAddLang('Ruby')
+    optimisedAddLang('kotlin')
+
+    // to edit
+
+    const secondLang = document.querySelector('li:nth-child(2)')
+    // secondLang.innerHTML = 'GoLang' but not optimed
+    const li = document.createElement('li')
+    //const newli = li.appendChild(document.createTextNode('GoLang')) // this will not work as appendChild 
+    // returns the appended child itself so ultimately a textnode is added
+    // secondLang.replaceWith(newli)
+
+    li.appendChild(document.createTextNode('goLang')) // this is better
+    secondLang.replaceWith(li)
+    
+
+    // another method is to just 
+    li.textContent = ('C++')
+    secondLang.replaceWith(li) //this apprarently not needed as we wrote same thing earlier earlier
+
+    //another way is to repalce the entire HTML
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li>Rust</li>'
+
+
+    //to remove
+
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove() //removed kotlin
+</script>
+</html>

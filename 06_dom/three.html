@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>DOM | Part 2 </title>
+</head>
+<body>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = 'main';
+    div.id = Math.round(Math.random*10 + 1);
+    div.setAttribute('title', 'generated title')
+    div.style.backgroundColor = 'green'
+    div.style.padding = '12px'
+    // we can use div.innerText = "example" but this process is costly
+    // because it overrides, i.e., it will first get the value then override it
+    // setAttribute is prefered as this do not get(leke nahi aata) the value so one round trip is saved
+    const addText = document.createTextNode('Just a simple text')
+    div.appendChild(addText)
+
+    //till now things are in just memory, lets attach it to document
+
+    document.body.appendChild(div)
+
+    //this is the main logic, we can now create a function to create something
+    // we can pass an array with custom value and maybe use a loop to run it multiple time to create these ex: divs here.
+</script>
+</html>
