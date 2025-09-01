@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing pictures</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="one" src="https://images.pexels.com/photos/33463036/pexels-photo-33463036.jpeg" alt="pic1"></li>
+            <li><img width="200px" id="two" src="https://images.pexels.com/photos/33475305/pexels-photo-33475305.jpeg" alt="pic2"></li>
+            <li><img width="200px" id="three" src="https://images.pexels.com/photos/33476434/pexels-photo-33476434.jpeg" alt="pic3"></li>
+            <li><img width="200px" id="four" src="https://images.pexels.com/photos/33500205/pexels-photo-33500205.jpeg" alt="pic4"></li>
+            <li><a href="https://google.com" id="google" style="color: pink;">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('two').onclick= function(){
+    //     alert('two clicked')
+    // }
+    // ealier used attachEvent() now we dont
+    // earlier in jQuery framework like react we used, on
+/*
+
+    one way is to use this, not recommended 
+    <li><img width="200px" id="three" src="https://images.pexels.com/photos/33476434/pexels-photo-33476434.jpeg" onclick="alert('three')" alt="pic3"></li>
+    
+
+    document.getElementById("images").addEventListener('click',function(e){
+        console.log("Clicked inside ul");
+    },false)
+    
+    document.getElementById("one").addEventListener('click',function(e){
+        console.log("one");
+        e.stopPropagation()
+    },false)
+
+    document.getElementById('google').addEventListener('click',function(e){
+        console.log('google clicked');
+        e.stopPropagation();
+        e.preventDefault();
+    },false)
+*/
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.parentNode);
+        
+        if(e.target.tagName === 'IMG'){
+            
+            console.log(e.target.id);
+            let removeit = e.target.parentNode //here we getting li. fore ref the hierarcy goes img<li<ul<div<document
+            removeit.remove() //this is one method
+
+            // removeit.parentNode.removeChild(removeit)
+        }
+    })
+
+</script>
+</html>
