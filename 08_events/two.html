@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const changeH1 = function(){
+        var eh1 = document.querySelector('h1')
+        eh1.innerHTML = 'Magic! this changed in 2 seconds'
+    }
+    const changeMe = setInterval(changeH1, 2000)
+
+    document.querySelector('#stop').addEventListener('click',
+        function(){
+            clearTimeout(changeMe)
+            console.log('Stopped');
+        }
+    )
+</script>
+</html>
