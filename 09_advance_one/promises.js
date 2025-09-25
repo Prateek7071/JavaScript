@@ -93,3 +93,30 @@ async function consumePromiseFive() {
 }
 
 consumePromiseFive()
+
+async function getAllUsers(){
+    try {
+        const response =await fetch('https://jsonplaceholder.typicode.com/users')
+        const data =await response.json()
+        console.log(data);
+    } catch (error) {
+        console.log('E: ',error);        
+    }
+}
+
+//getAllUsers()
+
+// another method to do the  above work2
+
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response)=>{
+    console.log(response.status);
+    return response.json()
+    
+})
+.then((data)=>{
+    data.forEach(element => {
+        console.log(element.id);
+    });
+})
+.catch((error)=> console.log(error))
