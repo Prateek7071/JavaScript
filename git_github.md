@@ -49,3 +49,18 @@ can also use git stash //useful when need to clean your current branch b4 creati
 > git push -u origin newBranchName //push new branch to github
 
 > gh pr create
+
+------------------------------------------------------
+
+If you did ammend mistake do this
+> git reset --soft HEAD~1 //undo last commit but keep changes in staging area
+which you can check using :
+> git reflog //shows all the changes you made
+
+then when you are sure head is at the right place you can do:
+> git push --forece-with-lease origin branchName //force push to remote branch, this will reset the branch to the state of your local branch
+// --force-with-lease is safer than --force as it checks if remote branch has been updated before force pushing
+
+then just re commit and push again
+> git commit -m "new comment"
+------------------------------------------------------
