@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library = "React",
+            this.server = "https://localhost:5000"
+            
+            //requrement
+
+            document.querySelector('button').addEventListener('click',this.handleClick.bind(this)) //binding this to the class React
+        }
+
+        handleClick(){
+            console.log("Button clicked");
+            console.log(this.server); //undefined because this is not bound to the class React
+            
+            //solution 1: bind this to the class React 
+            // in place of document.querySelector('button').addEventListener('click',this.handleClick) use 
+            //document.querySelector('button').addEventListener('click',this.handleClick.bind(this)) as it binds this to the class React
+            
+            //solution 2: use arrow function
+            //document.querySelector('button').addEventListener('click',()=>this.handleClick())     
+        }
+    }
+    const app = new React() // as soon as this page loads, the constructor runs and a object is created of the class React
+</script>
+</html>
