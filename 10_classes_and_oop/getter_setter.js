@@ -49,3 +49,6 @@ class User {
 const boy = new User("hello@gmail.com","12345555",21);
 console.log(boy.email); 
 console.log(boy.password);
+console.log(boy._email); // it will show the actual value of the property 
+
+
