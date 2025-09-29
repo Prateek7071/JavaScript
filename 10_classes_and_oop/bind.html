@@ -16,11 +16,14 @@
             
             //requrement
 
-            document.querySelector('button').addEventListener('click',this.handleClick.bind(this)) //binding this to the class React
+            document
+                .querySelector('button')
+                .addEventListener('click',this.handleClick.bind(this)) //binding this to the class React
 
             // in this context what bind is doing is that it is binding the this keyword to the class React so that when handleClick function is called
             // the this keyword inside handleClick function refers to the class React and not to the button
 
+            // when we dont use bind, we have this but the this is the reference of the button and not the class React.. so we use bind here.
         }
 
         handleClick(){
