@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexical scope</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="blue">Blue</button>
+</body>
+<script>
+    // lexical scoping
+    function outer(){
+        let username = "Patman"
+        //console.log('Outer ',smallUser);  // cant access
+        
+        function inner(){
+            let smallUser = "krypton"
+            console.log("Inner access,", username);
+        }
+        inner();
+
+        function inner2(){
+           // console.log("Inner2 access? ", smallUser); //cant access other function 
+            
+        }
+        inner2()
+    }
+    outer()
+
+    // lexical scope example ends
+
+    //closure 
+
+    function alpha(){
+        let name = "Foden"
+
+        function beta(){
+            console.log(name);
+        }
+
+        return beta
+    }
+
+    const smallalpha = alpha()
+    console.log(smallalpha);
+    
+    // here what to note is that when we are returning beta function from alpha function,
+    // the variable name is still accessible to beta function because of closure property of js
+    // the lexical scope of beta function includes the variable name from alpha function so its not just that beta function
+    // is returned but also the lexical scope of beta function is also returned which includes the variable name
+    smallalpha() // this will print Foden
+
+    // what is smallaplha? its a reference or value that the return of alpha function is assigned to
+    // and the return of alpha function is beta function
+    // so smallalpha is a reference to beta function
+    // so we can call smallalpha() to invoke beta function
+
+</script>
+
+<script>
+    
+    // The default way which works but will get tedious when there is a lot of buttons
+
+        // document.getElementById('orange').onclick = function(){
+        //     document.body.style.backgroundColor = 'orange'
+        // }
+
+        // document.getElementById('blue').onclick = function(){
+        //     document.body.style.backgroundColor = 'blue'
+        // }
+
+    // better way and a example of closure
+
+    function clickHandler(color){
+         document.body.style.backgroundColor = `${color}`
+        
+    }
+    // document.getElementById('orange').onclick = clickHandler // here we gave onClick refernce to the clickHandler function but we didnt invoked it, so it does nothing
+
+    /*
+    document.getElementById('orange').onclick = clickHandler('orange')
+    document.getElementById('blue').onclick = clickHandler('blue')
+    
+    the problem here is that onClick asked for a function but we just executed the function and assigned the return value of the function to onClick
+    so it will not work
+    */
+
+    // so we change clickHandler to updated one below
+
+    function UpdatedclickHandler(color){
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+        return 
+    }
+
+    document.getElementById('orange').onclick = UpdatedclickHandler('orange')
+    document.getElementById('blue').onclick = UpdatedclickHandler('blue')
+
+    // here the UpdatedclickHandler('orange') is executed and it returns a function which is then assigned to onClick
+    // and the returned function has access to the color variable because of closure property of js
+    // so when the button is clicked the returned function is executed and it changes the background color
+</script>
+</html>
