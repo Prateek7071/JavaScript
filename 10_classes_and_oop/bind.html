@@ -17,6 +17,10 @@
             //requrement
 
             document.querySelector('button').addEventListener('click',this.handleClick.bind(this)) //binding this to the class React
+
+            // in this context what bind is doing is that it is binding the this keyword to the class React so that when handleClick function is called
+            // the this keyword inside handleClick function refers to the class React and not to the button
+
         }
 
         handleClick(){
@@ -29,6 +33,7 @@
             
             //solution 2: use arrow function
             //document.querySelector('button').addEventListener('click',()=>this.handleClick())     
+            
         }
     }
     const app = new React() // as soon as this page loads, the constructor runs and a object is created of the class React
