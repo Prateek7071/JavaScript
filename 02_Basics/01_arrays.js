@@ -22,9 +22,11 @@ console.log(myArray);
 console.log("-------------------------------------------------------");
 
 const myArray2 = [1,2,3,4,5,6];
+console.log(myArray2);
 const myArray3 = myArray2.slice(1,4); // slice does not change the original array and it is exclusive of the end index
 console.log(myArray3);
 console.log(myArray2); // original array is not changed
+console.log("Splice")
 const myArray4 = myArray2.splice(1,4); // splice changes the original array and is inclusive of the end index
 console.log(myArray4); // removed elements
 console.log(myArray2); // original array is changed
