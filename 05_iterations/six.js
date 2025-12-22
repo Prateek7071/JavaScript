@@ -13,12 +13,16 @@ const result2= myNums.filter((num)=>{
 	num>4
 }) // this will not return anything due to scope, remember explicit and implicit return?
 
-console.log(result2) 
+const result5= myNums.forEach((num)=>{
+	return num>4
+}) //for each returns nothing 
+
+console.log(`Result 5 ${result5}`) 
 const result3= myNums.filter((num)=>{
 	return num>4
 }
 )
-console.log(result3)
+console.log(`Result 3 ${result3}`)
 
 //same thing but using forEach
 

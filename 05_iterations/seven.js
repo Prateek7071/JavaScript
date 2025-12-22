@@ -11,4 +11,8 @@ const newNums= myNums
 		.map((num) => num+2)		
 console.log(newNums)
 
-
+const newNums2 = []
+myNums.forEach(d => {
+  newNums2.push(d*10)
+})
+console.log(newNums2)

@@ -17,6 +17,7 @@ let heroPower = {
 Object.prototype.anyname = function(){
     console.log("Anyname is present in all objects!");
 }
+}
 
 Array.prototype.anotherName = function(){
     console.log("Hey array you have been prototyped")
