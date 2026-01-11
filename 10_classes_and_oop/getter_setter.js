@@ -85,5 +85,5 @@ class NewUser {
 const newBoy = new NewUser("example@mail.com", "hdbskdjgfs" , 25);
 console.log(newBoy.email); 
 console.log(newBoy.password); 
-console.log(newBoy.#email); // it will throw error as #email is a private property
-console.log(newBoy.#password); // it will throw error as #password is a private property
+//console.log(newBoy.#email); // it will throw error as #email is a private property
+//console.log(newBoy.#passwordxi); // it will throw error as #password is a private property

@@ -1,4 +1,4 @@
-- HTML is not an array by default it is a collection, it can be converted to one. So properties like map,forEach are not available.
+ - HTML is not an array by default it is a collection, it can be converted to one. So properties like map,forEach are not available.
 - Although as it is like an array we can access some properties like array 
 ex console.log(document.links(2)), and can manipulate a lot of things.
 ---------------------------------------------------------------------------------
