@@ -4,6 +4,8 @@ const isbnInput = document.getElementById('isbn')
 
 const submitBtn = document.getElementById('submit')
 const tbody=document.getElementById('book-list')
+
+
 submitBtn.addEventListener('click',(e)=>{
   e.preventDefault()
   displayRecord()
