@@ -64,5 +64,27 @@ th,td{
     font-weight: 400;
     font-family: inter;
     text-align: left;
+    vertical-align: middle;
 }
 
+img{
+    border-radius: 1000px;
+    border:1px solid black;
+}
+
+
+
+.name-cell {
+    display: flex;          /* Enables Flexbox */
+    align-items: center;    /* Vertically centers image and text */
+    gap: 12px;              /* Spacing between image and name */
+}
+
+.name-cell img {
+    flex-shrink: 0;         /* Prevents the image from squishing */
+    display: block;         /* Removes extra whitespace at bottom */
+}
+
+.name-td {
+    padding-left: 10px;     
+}

@@ -1,14 +1,60 @@
 const table = document.querySelector('.student')
+const btnSortAZ = document.getElementById('sortAZ')
+const btnSortZA = document.getElementById('sortZA')
+const btnSortMarks = document.getElementById('sortMarks')
+const btnSortPass = document.getElementById('sortPass')
+const btnSortClass = document.getElementById('sortClass')
+const btnSortGender = document.getElementById('sortGender')
 
-function renderRow(id,name,gender,sclass,marks,passing,email){
+function renderRow(id,img,name,gender,sclass,marks,passing,email){
   table.innerHTML+=`<tr>
-      <th>${id}</th>
-      <th>${name}</th>
-      <th>${gender}</th>
-      <th>${sclass}</th>
-      <th>${marks}</th>
-      <th>${passing}</th>
-      <th>${email}</th>
+      <td>${id}</td>
+      <td class="name-td">
+        <div class="name-cell">
+          <img src="${img}" height="38px" width="38px" alt="${name}">
+          <span>${name}</span>
+        </div>
+      </td>
+      <td>${gender}</td>
+      <td>${sclass}</td>
+      <td>${marks}</td>
+      <td>${passing}</td>
+      <td>${email}</td>
   </tr>`
 }
-renderRow()
+
+// funciton to merge photo fname lname medium
+// sorting - easy
+// two tables how ..
+
+let data;
+async function getAllUsers(){
+  try{
+    const response = await fetch('https://gist.githubusercontent.com/harsh3195/b441881e0020817b84e34d27ba448418/raw/c4fde6f42310987a54ae1bc3d9b8bfbafac15617/demo-json-data.json');
+    
+    data = await response.json()
+    await renderData()
+    
+    
+  }catch(error){
+    console.log(error)
+  }
+}
+function passing(res){
+  if(res===true)
+    return `Passed`
+  else
+  return `Failed`
+}
+async function renderData(){
+  data.forEach(e=>{
+    let name = `${e.first_name} ${e.last_name}`
+    let status = passing(e.passing)
+    renderRow(e.id,e.img_src,name,e.gender,e.class,e.marks,status,e.email)
+  })
+}
+
+btnSortAZ.addEventListener('click',()=>{
+  
+})
+getAllUsers()
