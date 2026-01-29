@@ -17,6 +17,7 @@
         console.log(xhr.readyState);
         if(xhr.readyState === 4){
             const data = JSON.parse(this.responseText)
+            console.log("Details: typeof-data followers status")
             console.log(typeof data);
             console.log(data.followers);
             console.log(xhr.status);
