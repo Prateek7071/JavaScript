@@ -7,6 +7,24 @@ const btnSortClass = document.getElementById('sortClass')
 const btnSortGender = document.getElementById('sortGender')
 const page = document.querySelector('.page')
 
+const searchInput = document.querySelector('input[type="search"]');
+const searchBtn = document.getElementById('searchBtn');
+
+let data;
+
+async function getAllUsers(){
+  try{
+    const response = await fetch('https://gist.githubusercontent.com/harsh3195/b441881e0020817b84e34d27ba448418/raw/c4fde6f42310987a54ae1bc3d9b8bfbafac15617/demo-json-data.json');
+    
+    data = await response.json()
+    await renderData(data)
+    
+    
+  }catch(error){
+    console.log(error)
+  }
+}
+
 function renderRow(id,img,name,gender,sclass,marks,passing,email){
   table.innerHTML+=`<tr>
       <td>${id}</td>
@@ -24,23 +42,6 @@ function renderRow(id,img,name,gender,sclass,marks,passing,email){
   </tr>`
 }
 
-// funciton to merge photo fname lname medium
-// sorting - easy
-// two tables how ..
-
-let data;
-async function getAllUsers(){
-  try{
-    const response = await fetch('https://gist.githubusercontent.com/harsh3195/b441881e0020817b84e34d27ba448418/raw/c4fde6f42310987a54ae1bc3d9b8bfbafac15617/demo-json-data.json');
-    
-    data = await response.json()
-    await renderData(data)
-    
-    
-  }catch(error){
-    console.log(error)
-  }
-}
 function passing(res){
   if(res===true)
     return `Passed`
@@ -67,7 +68,7 @@ async function renderData(data){
     renderRow(e.id,e.img_src,name,e.gender,e.class,e.marks,status,e.email)
   })
 }
-//TODO: use full name for az and za
+
 btnSortAZ.addEventListener('click',()=>{
   let newData = structuredClone(data);
   newData = newData.map(e=>({
@@ -153,4 +154,23 @@ function spawnNewTable(data){
   })
   page.appendChild(table2)
 }
+searchBtn.addEventListener('click',e=>{
+  e.preventDefault()
+  handleSeach()
+})
+searchInput.addEventListener('input', e=>{
+  e.preventDefault()
+  handleSeach()
+});
+
+function handleSeach(){
+  const query= searchInput.value.toLowerCase()
+  
+  const filterData = data.filter(e=>{
+    return(e.first_name.toLowerCase().includes(query) || e.last_name.toLowerCase().includes(query) || e.email.toLowerCase().includes(query))
+    
+  })
+  renderData(filterData)
+}
+
 getAllUsers()
