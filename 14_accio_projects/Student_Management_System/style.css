@@ -16,7 +16,7 @@ nav{
     font-family: inter;
 }
 .page{
-    padding: 28px;
+    padding: 28px 28px 0px 28px;
 }
 .search{
     display: flex;
@@ -55,7 +55,17 @@ table{
     border-collapse: collapse;
     background-color: #D9D9D9;
     color: black;
+    table-layout: fixed;
+    margin-bottom: 28px;
 }
+
+th:nth-child(1), td:nth-child(1) { width: 4%; }  /* ID */
+th:nth-child(2), td:nth-child(2) { width: 20%; } /* Name */
+th:nth-child(3), td:nth-child(3) { width: 12%; } /* Gender */
+th:nth-child(4), td:nth-child(4) { width: 10%; } /* Class */
+th:nth-child(5), td:nth-child(5) { width: 10%; } /* Marks */
+th:nth-child(6), td:nth-child(6) { width: 10%; } /* Passing */
+th:nth-child(7), td:nth-child(7) { width: 20%; } /* Email*/
 
 th,td{
     border:0.5px solid black;

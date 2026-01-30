@@ -5,6 +5,7 @@ const btnSortMarks = document.getElementById('sortMarks')
 const btnSortPass = document.getElementById('sortPass')
 const btnSortClass = document.getElementById('sortClass')
 const btnSortGender = document.getElementById('sortGender')
+const page = document.querySelector('.page')
 
 function renderRow(id,img,name,gender,sclass,marks,passing,email){
   table.innerHTML+=`<tr>
@@ -68,13 +69,19 @@ async function renderData(data){
 }
 //TODO: use full name for az and za
 btnSortAZ.addEventListener('click',()=>{
-  const newData = structuredClone(data);
+  let newData = structuredClone(data);
+  newData = newData.map(e=>({
+   ...e,first_name:e.first_name+" "+e.last_name //neat method
+  }))
   newData.sort((a, b) => a.first_name.localeCompare(b.first_name))
   renderData(newData)
 })
 
 btnSortZA.addEventListener('click',()=>{
   let newData = structuredClone(data);
+  newData = newData.map(e=>({
+   ...e,first_name:e.first_name+" "+e.last_name //neat method
+  }))
   newData.sort((a, b) => b.first_name.localeCompare(a.first_name))
   renderData(newData)
 })
@@ -101,7 +108,49 @@ btnSortClass.addEventListener('click',()=>{
 })
 
 btnSortGender.addEventListener('click',()=>{
+  let newData = structuredClone(data);
+  let maleData = newData.filter(e=>{
+    return e.gender==='Male'
+  })
+  let femaleData = data.filter(e => {
+    return e.gender === 'Female'
+  })
   
+  renderData(maleData)
+  spawnNewTable(femaleData)
 })
 
+function spawnNewTable(data){
+  // ik this function is redundant by i'm lazy
+  let table2= document.createElement('table')
+  table2.classList.add('student')
+  table2.innerHTML=` <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Class</th>
+      <th>Marks</th>
+      <th>Passing</th>
+      <th>Email</th>
+  </tr>`
+  data.forEach(e=>{
+    let name = `${e.first_name} ${e.last_name}`
+    let status = passing(e.passing)
+    table2.innerHTML+=`<tr>
+        <td>${e.id}</td>
+        <td class="name-td">
+          <div class="name-cell">
+            <img src="${e.img_src}" height="38px" width="38px" alt="${name}">
+            <span>${name}</span>
+          </div>
+        </td>
+        <td>${e.gender}</td>
+        <td>${e.class}</td>
+        <td>${e.marks}</td>
+        <td>${status}</td>
+        <td>${e.email}</td>
+    </tr>`
+  })
+  page.appendChild(table2)
+}
 getAllUsers()
