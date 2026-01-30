@@ -167,8 +167,8 @@ function handleSeach(){
   const query= searchInput.value.toLowerCase()
   
   const filterData = data.filter(e=>{
-    return(e.first_name.toLowerCase().includes(query) || e.last_name.toLowerCase().includes(query) || e.email.toLowerCase().includes(query))
-    
+    return(
+      e.first_name.toLowerCase().includes(query) || e.last_name.toLowerCase().includes(query) || e.email.toLowerCase().includes(query))
   })
   renderData(filterData)
 }

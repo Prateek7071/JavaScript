@@ -50,6 +50,12 @@ input[type="search"]{
     font-weight: 400;
     font-family: inter;
 }
+
+input:focus, 
+button:focus {
+    outline: none;
+}
+
 table{
     width: 100%;
     border-collapse: collapse;
