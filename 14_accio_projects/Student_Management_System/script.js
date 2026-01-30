@@ -33,7 +33,7 @@ async function getAllUsers(){
     const response = await fetch('https://gist.githubusercontent.com/harsh3195/b441881e0020817b84e34d27ba448418/raw/c4fde6f42310987a54ae1bc3d9b8bfbafac15617/demo-json-data.json');
     
     data = await response.json()
-    await renderData()
+    await renderData(data)
     
     
   }catch(error){
@@ -46,15 +46,62 @@ function passing(res){
   else
   return `Failed`
 }
-async function renderData(){
+
+async function renderData(data){
+  table.innerHTML=`
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Class</th>
+        <th>Marks</th>
+        <th>Passing</th>
+        <th>Email</th>
+    </tr>
+    `
+  
   data.forEach(e=>{
     let name = `${e.first_name} ${e.last_name}`
     let status = passing(e.passing)
     renderRow(e.id,e.img_src,name,e.gender,e.class,e.marks,status,e.email)
   })
 }
-
+//TODO: use full name for az and za
 btnSortAZ.addEventListener('click',()=>{
+  const newData = structuredClone(data);
+  newData.sort((a, b) => a.first_name.localeCompare(b.first_name))
+  renderData(newData)
+})
+
+btnSortZA.addEventListener('click',()=>{
+  let newData = structuredClone(data);
+  newData.sort((a, b) => b.first_name.localeCompare(a.first_name))
+  renderData(newData)
+})
+
+btnSortMarks.addEventListener('click',()=>{
+  let newData = structuredClone(data);
+  newData.sort((a, b) => a.marks-b.marks)
+  renderData(newData)
   
 })
+
+btnSortPass.addEventListener('click',()=>{
+  let newData = structuredClone(data);
+  newData=newData.filter(e=>{
+    return e.passing===true
+  })
+  renderData(newData)
+})
+
+btnSortClass.addEventListener('click',()=>{
+  let newData = structuredClone(data);
+  newData.sort((a, b) => a.class-b.class)
+  renderData(newData)
+})
+
+btnSortGender.addEventListener('click',()=>{
+  
+})
+
 getAllUsers()
