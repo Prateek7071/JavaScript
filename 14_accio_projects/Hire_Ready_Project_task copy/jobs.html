@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Jobs - HireReady</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">H</div>
+                <span>HireReady</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="jobs.html">Jobs</a>
+                <a href="company.html">Companies</a>
+                <a href="index.html#how-it-works">How it Works</a>
+                <a href="auth.html" class="btn btn-outline">Sign In</a>
+                <a href="auth.html" class="btn btn-primary">Get Started</a>
+            </div>
+            
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Jobs Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Find Your Perfect Job</h2>
+                <p>Browse through thousands of job opportunities</p>
+            </div>
+            
+            <div class="jobs-layout">
+                <!-- Sidebar Filters -->
+                <aside class="sidebar">
+                    <div class="filter-group">
+                        <h4>Job Type</h4>
+                        <div class="filter-option">
+                            <input type="checkbox" id="fulltime" checked>
+                            <label for="fulltime">Full-time</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="parttime">
+                            <label for="parttime">Part-time</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="contract">
+                            <label for="contract">Contract</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="remote" checked>
+                            <label for="remote">Remote</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Experience Level</h4>
+                        <div class="filter-option">
+                            <input type="checkbox" id="entry">
+                            <label for="entry">Entry Level</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="mid" checked>
+                            <label for="mid">Mid Level</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="senior">
+                            <label for="senior">Senior Level</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Salary Range</h4>
+                        <div class="filter-option">
+                            <input type="checkbox" id="range1">
+                            <label for="range1">0 - 5 LPA</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="range2" checked>
+                            <label for="range2">5 - 10 LPA</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="range3" checked>
+                            <label for="range3">10 - 20 LPA</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="range4">
+                            <label for="range4">20+ LPA</label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Location</h4>
+                        <div class="filter-option">
+                            <input type="checkbox" id="bangalore" checked>
+                            <label for="bangalore">Bangalore</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="mumbai">
+                            <label for="mumbai">Mumbai</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="delhi">
+                            <label for="delhi">Delhi</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="hyderabad">
+                            <label for="hyderabad">Hyderabad</label>
+                        </div>
+                    </div>
+                </aside>
+                
+                <!-- Jobs Grid -->
+                <div class="jobs-content">
+                    <div class="jobs-grid">
+                        <!-- Job Card 1 -->
+                        <a href="job-detail.html" class="job-card">
+                            <div class="job-header">
+                                <div class="job-company-logo">💻</div>
+                                <span class="badge badge-success">New</span>
+                            </div>
+                            <h3>Frontend Developer</h3>
+                            <p style="color: var(--text-light); margin-bottom: 0.5rem;">TechCorp India</p>
+                            <div class="job-meta">
+                                <span>📍 Bangalore</span>
+                                <span>💰 ₹10-15 LPA</span>
+                            </div>
+                            <div class="job-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">3-5 years</span>
+                            </div>
+                        </a>
+                        
+                        <!-- Job Card 2 -->
+                        <a href="job-detail.html" class="job-card">
+                            <div class="job-header">
+                                <div class="job-company-logo">⚙️</div>
+                                <span class="badge badge-primary">Remote</span>
+                            </div>
+                            <h3>Backend Developer</h3>
+                            <p style="color: var(--text-light); margin-bottom: 0.5rem;">StartupXYZ</p>
+                            <div class="job-meta">
+                                <span>📍 Remote</span>
+                                <span>💰 ₹12-18 LPA</span>
+                            </div>
+                            <div class="job-tags">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">4-6 years</span>
+                            </div>
+                        </a>
+                        
+                        <!-- Job Card 3 -->
+                        <a href="job-detail.html" class="job-card">
+                            <div class="job-header">
+                                <div class="job-company-logo">📱</div>
+                                <span class="badge badge-warning">Hot</span>
+                            </div>
+                            <h3>Mobile Developer</h3>
+                            <p style="color: var(--text-light); margin-bottom: 0.5rem;">InnovateLabs</p>
+                            <div class="job-meta">
+                                <span>📍 Mumbai</span>
+                                <span>💰 ₹8-14 LPA</span>
+                            </div>
+                            <div class="job-tags">
+                                <span class="tag">Flutter</span>
+                                <span class="tag">Dart</span>
+                                <span class="tag">2-4 years</span>
+                            </div>
+                        </a>
+                        
+                        <!-- Job Card 4 -->
+                        <a href="job-detail.html" class="job-card">
+                            <div class="job-header">
+                                <div class="job-company-logo">🗄️</div>
+                                <span class="badge badge-success">New</span>
+                            </div>
+                            <h3>Data Engineer</h3>
+                            <p style="color: var(--text-light); margin-bottom: 0.5rem;">DataFlow Systems</p>
+                            <div class="job-meta">
+                                <span>📍 Hyderabad</span>
+                                <span>💰 ₹15-22 LPA</span>
+                            </div>
+                            <div class="job-tags">
+                                <span class="tag">SQL</span>
+                                <span class="tag">AWS</span>
+                                <span class="tag">5+ years</span>
+                            </div>
+                        </a>
+                        
+                        <!-- Job Card 5 -->
+                        <a href="job-detail.html" class="job-card">
+                            <div class="job-header">
+                                <div class="job-company-logo">🎨</div>
+                                <span class="badge badge-primary">Remote</span>
+                            </div>
+                            <h3>UI/UX Designer</h3>
+                            <p style="color: var(--text-light); margin-bottom: 0.5rem;">DesignStudio</p>
+                            <div class="job-meta">
+                                <span>📍 Delhi</span>
+                                <span>💰 ₹6-12 LPA</span>
+                            </div>
+                            <div class="job-tags">
+                                <span class="tag">Figma</span>
+                                <span class="tag">Adobe XD</span>
+                                <span class="tag">2-5 years</span>
+                            </div>
+                        </a>
+                        
+                        <!-- Job Card 6 -->
+                        <a href="job-detail.html" class="job-card">
+                            <div class="job-header">
+                                <div class="job-company-logo">☁️</div>
+                                <span class="badge badge-warning">Hot</span>
+                            </div>
+                            <h3>DevOps Engineer</h3>
+                            <p style="color: var(--text-light); margin-bottom: 0.5rem;">CloudFirst</p>
+                            <div class="job-meta">
+                                <span>📍 Pune</span>
+                                <span>💰 ₹14-20 LPA</span>
+                            </div>
+                            <div class="job-tags">
+                                <span class="tag">Docker</span>
+                                <span class="tag">Kubernetes</span>
+                                <span class="tag">4-7 years</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <a href="#" class="page-btn">←</a>
+                        <a href="#" class="page-btn active">1</a>
+                        <a href="#" class="page-btn">2</a>
+                        <a href="#" class="page-btn">3</a>
+                        <span style="padding: 0.5rem;">...</span>
+                        <a href="#" class="page-btn">10</a>
+                        <a href="#" class="page-btn">→</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">H</div>
+                        <span>HireReady</span>
+                    </a>
+                    <p>Connecting top talent with leading companies across India.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>For Candidates</h4>
+                    <ul>
+                        <li><a href="jobs.html">Browse Jobs</a></li>
+                        <li><a href="auth.html">Create Profile</a></li>
+                        <li><a href="#">Job Alerts</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>For Employers</h4>
+                    <ul>
+                        <li><a href="#">Post a Job</a></li>
+                        <li><a href="#">Search Resumes</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 HireReady. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <span class="mobile-nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="jobs.html" class="mobile-nav-item active">
+            <span class="mobile-nav-icon">💼</span>
+            <span>Jobs</span>
+        </a>
+        <a href="company.html" class="mobile-nav-item">
+            <span class="mobile-nav-icon">🏢</span>
+            <span>Companies</span>
+        </a>
+        <a href="auth.html" class="mobile-nav-item">
+            <span class="mobile-nav-icon">👤</span>
+            <span>Profile</span>
+        </a>
+    </nav>
+</body>
+</html>
